@@ -2,6 +2,8 @@ package com.example.booking.controller;
 
 import com.example.booking.model.BookedSeat;
 import com.example.booking.model.Booking;
+import com.example.booking.model.PaymentMethod;
+import com.example.booking.model.CardType;
 import com.example.booking.service.BookingService;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,8 +21,11 @@ public class BookingController {
     @PostMapping
     public Booking create(@RequestParam Long userId,
                           @RequestParam Long showId,
+                          @RequestParam double amount,
+                          @RequestParam PaymentMethod method,
+                          @RequestParam(required = false) CardType cardType,
                           @RequestBody List<BookedSeat> seats) {
-        return service.createBooking(userId, showId, seats);
+        return service.createBooking(userId, showId, amount, method, cardType, seats);
     }
 
     @GetMapping

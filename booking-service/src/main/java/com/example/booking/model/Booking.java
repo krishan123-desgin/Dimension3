@@ -20,6 +20,49 @@ public class Booking {
         this.showId = showId;
     }
 
+    public static class Builder {
+        private final Booking booking = new Booking();
+
+        public Builder id(Long id) {
+            booking.id = id;
+            return this;
+        }
+
+        public Builder userId(Long userId) {
+            booking.userId = userId;
+            return this;
+        }
+
+        public Builder showId(Long showId) {
+            booking.showId = showId;
+            return this;
+        }
+
+        public Builder seats(List<BookedSeat> seats) {
+            booking.seats = seats;
+            return this;
+        }
+
+        public Builder totalAmount(double totalAmount) {
+            booking.totalAmount = totalAmount;
+            return this;
+        }
+
+        public Builder paymentMethod(PaymentMethod paymentMethod) {
+            booking.paymentMethod = paymentMethod;
+            return this;
+        }
+
+        public Builder cardType(CardType cardType) {
+            booking.cardType = cardType;
+            return this;
+        }
+
+        public Booking build() {
+            return booking;
+        }
+    }
+
     public Long getId() {
         return id;
     }
