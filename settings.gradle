@@ -1,0 +1,2 @@
+rootProject.name = 'movie-booking-application'
+include 'movie-service', 'theater-service', 'booking-service', 'payment-service'
